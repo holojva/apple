@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 url = f"https://kidkodschool.github.io/welcome"
 import sys
 import random
+import time
 response = requests.get(url)
 query = sys.argv[1] if len(sys.argv) > 1 else input("ima avatara ")
 # print(dir(response))
@@ -19,6 +20,7 @@ count = 0
 randnum = random.randint(1, 20)
 for raw_img in soup.find_all("img"):
     print("Searching...")
+    time.sleep(1)
     link = raw_img.get("src")
     alternative = raw_img.get("alt")
     if link and link.startswith("https") and alternative != "Google":
