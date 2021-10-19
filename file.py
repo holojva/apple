@@ -1,12 +1,14 @@
 from typing import cast
 import requests
 from bs4 import BeautifulSoup
-url = f"https://kidkodschool.github.io/welcome"
+# url = f"https://kidkodschool.github.io/welcome"
 import sys
 import random
 import time
-response = requests.get(url)
+# response = requests.get(url)
+print(sys.argv)
 query = sys.argv[1] if len(sys.argv) > 1 else input("ima avatara ")
+print(query)
 # print(dir(response))
 # print(response.status_code)
 # print(response.headers)
@@ -21,7 +23,7 @@ randnum = random.randint(1, 20)
 for raw_img in soup.find_all("img"):
     print("Searching...")
     # You can delete this if you don't want to wait
-    time.sleep(1)
+    # time.sleep(1)
     link = raw_img.get("src")
     alternative = raw_img.get("alt")
     if link and link.startswith("https") and alternative != "Google":
