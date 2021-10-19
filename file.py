@@ -20,6 +20,7 @@ count = 0
 randnum = random.randint(1, 20)
 for raw_img in soup.find_all("img"):
     print("Searching...")
+    # You can delete this if you don't want to wait
     time.sleep(1)
     link = raw_img.get("src")
     alternative = raw_img.get("alt")
